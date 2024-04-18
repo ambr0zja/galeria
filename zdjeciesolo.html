@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joanna Gajdzik - zadanie galeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      margin: 20px;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .image-container img {
+      width: 40%;
+      height: auto;
+      margin-right: 20px;
+
+    }
+
+    .image-description {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+      flex-grow: 1;
+      /*jak elastyczny ma być element flexowy w stosunku do innych elementów flexowych w kontenerze. Wartość flex-grow definiuje, ile przestrzeni dostępnej do rozdzielenia między elementami powinien zająć dany element flexowy.*/
+    }
+
+    .home-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      margin-left: 10px;
+
+    }
+
+    .home-button:hover {
+      background-color: #555;
+    }
+
+    .about-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .about-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 5px;
+      box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+      /* Cień poniżej stopki */
+    }
+
+    footer p {
+      margin: 0;
+      text-align: center;
+      /* Dodaj styl text-align: center; dla tekstu w stopce */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="galeria.html" class="home-button">Galeria zdjęć</a>
+    <a href="aboutme.html" class="about-button">O mnie</a>
+    <h1>Zdjęcie</h1>
+  </header>
+
+
+  <div class="image-container">
+    <img src="" alt="Selected Image" id="selectedImage">
+    <div class="image-description" id="imageDescription"></div>
+  </div>
+  <footer>
+    <p style="margin: 0;">&copy; 2024 Galeria Zdjęć</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Uruchamia funkcję anonimową, gdy cały dokument HTML został załadowany
+      const urlParams = new URLSearchParams(window.location.search);
+      //Tworzy obiekt URLSearchParams, który zawiera wszystkie parametry zapytania (query parameters) z aktualnego adresu URL
+      const imgSrc = urlParams.get('img');
+      //Pobiera wartość parametru o nazwie 'img' (ścieżka do obrazka) z obiektu URLSearchParams
+      const desc = urlParams.get('desc');
+      //Pobiera wartość parametru o nazwie 'desc' (opis obrazka) z obiektu URLSearchParams
+
+      // Ustaw obrazek i opis na stronie
+      if (imgSrc && desc) { //Sprawdza, czy obie wartości są dostępne
+        document.getElementById('selectedImage').src = imgSrc;
+        //Ustawia źródło obrazka na stronie internetowej na podstawie pobranej ścieżki do obrazka
+        document.getElementById('imageDescription').innerText = desc;
+        //Ustawia tekst opisu obrazka na stronie internetowej na podstawie pobranego opisu
+      } else {
+        // Jeśli brak parametrów, poinformuj użytkownika
+        alert("Nieprawidłowe parametry obrazka.");
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

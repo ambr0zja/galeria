@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joanna Gajdzik - zadanie galeria</title>
+  <style>
+    /*z-index - Określa warstwę, na której ma być wyświetlony element w stosunku do innych elementów*/
+    /*wyższa liczba z-index - na wierzchu*/
+    /* Resetowanie domyślnych stylów i ustawienia ogólne strony */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      /*zew marginesy elementu (0 - brak marg)*/
+      padding: 0;
+      /*wew  marginesy*/
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    /*Styl dla logo i poniżej dla samego obrazka logo*/
+    .logo {
+      display: flex;
+      /*element flexbox*/
+      align-items: center;
+    }
+
+    .logo img {
+      max-width: 15%;
+      height: auto;
+    }
+
+    /*Styl dla nagłówka h1*/
+    h1 {
+      margin: 0;
+    }
+
+    /*styl dla tła nagłówka i ułożenia jego zawartości*/
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      /*rozmieszczenie elementów wzdłuż głównej osi w kontenerze flexbox*/
+      /*space-between - elementy rozmieszczone równomiernie z pustymi miejscami pomiędzy*/
+      align-items: center;
+    }
+
+    /*Styl stopki*/
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /*styl sekcji głównej*/
+    main {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /*Styl dla elementu galerii i  niiżej dla obrazka w galerii*/
+    .gallery-item {
+      width: 200px;
+      height: fit-content;
+      margin: 10px;
+      overflow: hidden;
+      /*jak obsługuje zawartość większą niż wymiary - ukryta zawartość która wychodzi za granicę*/
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /*Ustawiono efekt cienia o wartościach, które nadają subtelny efekt cienia wokół elementów galerii*/
+      cursor: pointer;
+      /*zmiana kursowa jak sie najedzie*/
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /*obraz jako element blokowy*/
+      object-fit: cover;
+      /*skaluje obraz zeby wypelnil konteneer, zeby proporcje xachowac i przycina nadmiarowy obszar*/
+    }
+
+    /*styl opisu galerii*/
+    .description {
+      padding: 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    /*styl dla przycisku "o mnie"*/
+    .home-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      /*zaokrągla narożniki*/
+      margin-right: 10px;
+    }
+
+    /*efekt przy najeżdżaniu na przycisk*/
+    .home-button:hover {
+      background-color: #555;
+    }
+
+    .about-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .about-button:hover {
+      background-color: #555;
+    }
+
+    /*styl stopki i elementu p w stopce (paragraf)*/
+    footer {
+      position: fixed;
+      /*metoda pozycjonowania, fixed - pozycjonowanie względem widoku przeglądarki i stała pozycja podczas przewijania*/
+      bottom: 0;
+      /*odległość od dołu elementu do dolnej krawędzi*/
+      width: 100%;
+      padding: 5px;
+      box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+      /* Cień poniżej stopki */
+    }
+
+    footer p {
+      margin: 0;
+      text-align: center;
+      /* Dodaj styl text-align: center; dla tekstu w stopce */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><!-- Logo strony -->
+      <img src="kitty_763775.png" alt="Logo Strony">
+    </div>
+    <!-- Tytuł strony -->
+    <h1>Galeria zdjęć</h1>
+    <div></div>
+    <div></div>
+    <!-- Przycisk "O mnie" -->
+    <a href="aboutme.html" class="about-button">O mnie</a>
+  </header>
+
+  <!-- Główna treść strony - galeria zdjęć -->
+  <main>
+    <!-- Elementy galerii -->
+    <div class="gallery-item"
+      onclick="showImage('pizza.jpg', 'Wyjście na pizzę neapolitańską do retauracji Nolio na krakowskiej')">
+      <img src="pizza.jpg" alt="Pizza neapolitańska">
+      <!--`onclick="showImage('pizza.jpg', 'Wyjście na pizzę neapolitańską 
+        do restauracji Nolio na krakowskiej')"`: Wywołuje funkcję 
+        `showImage` po kliknięciu w element galerii. 
+        Przekazuje konkretne wartości dla `imageSrc` i `description`.-->
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('mpk.jpg', 'Komunikacja miejska i walka ze śniegiem - małe opóźnienie tramwaju.')">
+      <img src="mpk.jpg" alt="Tablica MPK">
+    </div>
+    <div class="gallery-item" onclick="showImage('autobus.jpg', 'Zatłoczony autobus na matecznym w stronę Bonarki.')">
+      <img src="autobus.jpg" alt="Autobus">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('koncert.jpg', 'Koncert w filharmonii krakowskiej - Jubileusz 80. urodzin Antoniego Wita.')">
+      <img src="koncert.jpg" alt="Filharmonia krakowska">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('budynki.jpg', 'Widok z okna w pracy - wyburzanie budynku i trzęsące się monitory.')">
+      <img src="budynki.jpg" alt="Spadający budynek">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('biuro.jpg', 'Świąteczne dekoracje biurka na konkurs - niestety nie wygrałam.')">
+      <img src="biuro.jpg" alt="udekorowane biurko">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('kawa.jpg', 'Pierwsza kawa w nowo poznanej kawiarni obok filharmonii.')">
+      <img src="kawa.jpg" alt="Kawy">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('ramen1.jpg', 'Testowanie ramenu w Kinki Ramen niedaleko UJ - bardzo smaczne.')">
+      <img src="ramen1.jpg" alt="dwa rameny">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('ramen2.jpg', 'Drugie podejście do ramenu - także Kinki Ramen - czyżby to moja ulubiona restauracja?')">
+      <img src="ramen2.jpg" alt="dwa rameny">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('szydelko.jpg', 'Nowe hobby - szydełkowanie. Podczas tych samych zakupów kupiłam również 5 włóczek.')">
+      <img src="szydelko.jpg" alt="szydełka">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('bilet.jpg', 'Testowy produkt ulotki instytutu Nauk o Informacji na UKEN - próba generalna przed wyprawą do drukarni.')">
+      <img src="bilet.jpg" alt="bilet ulotka">
+    </div>
+    <div class="gallery-item"
+      onclick="showImage('costa.jpeg', 'Testowanie nowości w Costa Coffee - cynamonka oraz słodka kawa.')">
+      <img src="costa.jpeg" alt="kawa w Costa Coffee">
+    </div>
+  </main>
+  <footer>
+    <p style="margin: 0;">&copy; 2024 Galeria Zdjęć</p>
+    <!--`&copy;`: Jest to specjalny znak HTML 
+        reprezentujący prawo autorskie ©.
+    `2024 Galeria Zdjęć`: Tekst wyświetlany w stopce, 
+    reprezentujący rok i nazwę galerii zdjęć.-->
+  </footer>
+
+  <script>//function showImage - Definiuje funkcję JavaScript o nazwie `showImage` przyjmującą dwa argumenty: `imageSrc` (źródło obrazu) i `description` (opis obrazu).
+
+    function showImage(imageSrc, description) {
+      // Przekieruj do strony podrzędnej z parametrami w adresie URL
+      window.location.href = 'zdjeciesolo.html?img=' + encodeURIComponent(imageSrc) + '&desc=' + encodeURIComponent(description);
+    }
+    //window.location.href Odnosi się do obiektu `location` w przeglądarce, a `href` jest właściwością, która zawiera pełny adres URL.
+    //'zdjeciesolo.html?img=' + encodeURIComponent(imageSrc)
+    //+ '&desc=' + encodeURIComponent(description);`:
+    //Tworzy nowy adres URL przekierowania na stronę podrzędną
+    //(`zdjeciesolo.html`) z dwoma parametrami: `img` i `desc`.
+    //Parametry te są dodawane do adresu URL, a `encodeURIComponent` służy do zakodowania wartości,
+    //co jest ważne, gdy wartości zawierają znaki specjalne.
+
+  </script>
+  <!-- Skrypt JavaScript - funkcja do obsługi kliknięcia na element galerii -->
+
+
+</body>
+
+</html>

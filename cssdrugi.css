@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 2;
+    /*określa warstwę, na której ma być wyświetlony element w stosunku do innych elementów
+    Ustawiono wartości 1 i 2, aby kontrolować kolejność warstw (elementy z wyższym z-index są wyświetlane na wierzchu).*/
+}
+
+.main-header .logo img {
+    max-width: 15%;
+    height: auto;
+}
+
+.main-header nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    /* Ustawienie, aby elementy były rozmieszczone na końcu */
+    flex-grow: 1;
+}
+
+.main-header nav {
+    margin-right: 20px;
+}
+
+.main-header nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.current {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    /* Dodanie marginesu na lewo dla tytułu po dodaniu logo */
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    /*Ustawia pozycję względną, co pozwala na użycie 
+    wartości związanych z pozycją, takich jak z-index*/
+    z-index: 2;
+}
+
+.gallery a {
+    margin: 10px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    flex: 1;
+    max-width: calc(33.33% - 20px);
+    /*Ustawia maksymalną szerokość elementu 
+    anchor na jedną trzecią szerokości kontenera galerii, 
+    odejmując 20 pikseli od każdego boku dla marginesów. - pomoc AI*/
+}
+
+.gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s;
+    /*płynny efekt przejścia (transition) 
+    dla właściwości transform na czas trwania 0.3 sekundy*/
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    /*Przy najechaniu kursorem, obrazki są powiększane o 
+    10% (1.1 razy oryginalnej wielkości) za pomocą właściwości 
+    transform, co tworzy efekt powiększenia 
+    (zoom-in) przy najechaniu kursorem.*/
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: auto;
+    /* Ustawienie margin-top na auto, aby przesunąć stopkę na dół */
+    z-index: 1;
+    /* Z-index ustawiony na 1, aby być na wierzchu nawigacji */
+}
+
+.empty {
+    width: 350px;
+    margin: 10px;
+}

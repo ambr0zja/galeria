@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joanna Gajdzik - zadanie galeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .image-container {
+      box-sizing: border-box;
+      margin: 20px;
+      width: 40%;
+    }
+
+    .image-container img {
+      width: 90%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .image-description {
+      width: 50%;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+      box-sizing: border-box;
+      font-size: large;
+    }
+
+    .home-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .home-button:hover {
+      background-color: #555;
+    }
+
+    .about-button {
+      text-decoration: none;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .about-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 5px;
+      /* Mniejszy padding niż w headerze */
+      box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+      /* Cień poniżej stopki */
+    }
+
+    footer p {
+      margin: 0;
+      text-align: center;
+      /* Dodaj styl text-align: center; dla tekstu w stopce */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="galeria.html" class="home-button">Galeria zdjęć</a>
+    <a href="aboutme.html" class="about-button">O mnie</a>
+    <a href="drugaproba.html" class="home-button">Druga galeria zdjęć</a>
+    <h1>O mnie</h1>
+  </header>
+
+  <div class="content-container">
+    <div class="image-container">
+      <img src="asia.jpg" alt="autor" />
+    </div>
+    <div class="image-description">
+      Witajcie! Jestem autorką tej strony, gdzie chciałabym podzielić się z Wami ciekawymi zdjęciami. Na co dzień
+      pracuję na pełny etat w korporacji w Krakowie. Moja praca dostarcza mi codziennych wyzwań, ale również cennych
+      doświadczeń i nowych znajomości. Zachęcam Was do przeglądania galerii i odkrywania piękna w najprostszych i
+      najbardziej codziennych momentach. Mam nadzieję, że zdjęcia, które tu prezentuję, przypadną Wam do gustu tak samo,
+      jak mi.
+      <p>Dziękuję za odwiedzenie mojej strony!</p>
+      <p>Druga galeria stworzona została aby użyć nawigacji między zdjęciami.</p>
+    </div>
+  </div>
+  <footer>
+    <p style="margin: 0;">&copy; 2024 Galeria Zdjęć</p>
+  </footer>
+
+</body>
+
+</html>

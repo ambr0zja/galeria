@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanna Gajdzik - zadanie galeria</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Minimalna wysokość na 100% wysokości okna przeglądarki */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            /* Ustawienie, aby elementy były rozmieszczone na krańcach nagłówka */
+            align-items: center;
+            padding: 10px;
+            z-index: 2;
+        }
+
+        .logo img {
+            max-width: 15%;
+            /* Ustawienie szerokości logo */
+            height: auto;
+            /* Ustawienie, aby logo skalowało proporcjonalnie */
+            display: flex;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-left: 10px;
+            /* Dodatkowy margines dla tytułu po dodaniu logo */
+        }
+
+        .navigation,
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background-color: #f0f0f0;
+            position: relative;
+            z-index: 2;
+            /* Z-index ustawiony na 2, aby być na wierzchu */
+        }
+
+        .gallery a,
+        .navigation a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 130px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 50%;
+            max-height: 100%;
+        }
+
+        .image-info {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin-top: auto;
+            /* Ustawienie margin-top na auto, aby przesunąć stopkę na dół */
+            z-index: 1;
+            /* Z-index ustawiony na 1, aby być na wierzchu nawigacji */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="drugaproba.html"><img src="kitty_763775.png" alt="Logo Strony"></a>
+        </div>
+        <div class="menu">
+            <h1><a href="drugaproba.html">Strona główna</a></h1>
+        </div>
+        <div>
+            <h1><a href="aboutme.html">O mnie</a></h1>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </header>
+    <div class="gallery">
+        <a href="image1.html">Autobus</a>
+        <a href="image2.html">Pizza</a>
+        <a href="image3.html">Ramen</a>
+        <a href="image4.html">Koncert</a>
+        <a href="image5.html">Kawa</a>
+        <a href="image6.html">MPK</a>
+    </div>
+    <div class="image-container">
+        <img src="costa.jpeg" alt="Kawa i cynamonka">
+        <div class="image-info">
+            <h2>Kawa i nowość w Costa Coffee</h2>
+            <p>To ujęcie przenosi nas do chwili relaksu w kawiarni Costa Coffee, gdzie delektuję się słodką 
+                sezonową kawą. Na talerzu czaruje aromatyczna cynamonka na ciepło, która była 
+                nowością w menu. To pierwsze spotkanie z cynamonką w tym miejscu, choć muszę przyznać, że wciąż pozostaję wierna 
+                wersji znanego mi ze Starbucks'a. Mimo to, smakowała wyjątkowo, dodając nutkę przyjemnego ciepła do mojej kawowej przygody.</p>
+        </div>
+    </div>
+    <div class="navigation">
+        <a href="image4.html">Previous Image</a>
+        <a href="image6.html">Next Image</a>
+
+    </div>
+    <footer>
+        <p style="margin: 0;">&copy; 2024 Galeria Zdjęć</p>
+    </footer>
+</body>
+
+</html>
